@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build: .
+    environment:
+      - DB_URL=mongodb://db:27017/to_do
+    volumes:
+      - .:/usr/src/to-do-app
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+  db:
+    image: 'mongo'
+    volumes:
+      - to_do_mongodb:/data/db
+    ports:
+      - 27017:27017
+volumes:
+  to_do_mongodb:

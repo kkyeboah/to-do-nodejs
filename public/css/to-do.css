@@ -1,0 +1,90 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.to-do {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-top: 5%;
+}
+
+.to-do .to-do-heading {
+    text-align: center;
+}
+
+.to-do .to-do-form {
+    display: flex;
+}
+
+.to-do .to-do-list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.to-do .to-do-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+.to-do .to-do-input:focus {
+    outline-width: 1px;
+}
+
+.to-do .to-do-list-item {
+    display: flex;
+    font-size: 1rem;
+    background: white;
+    border: 1px solid #eaeaea;
+    width: 100%;
+    height: 2.5rem;
+    margin: 0.5rem 0;
+    border-radius: 2px;
+}
+
+.to-do .to-do-list-checkbox, .to-do .to-do-list-text, .to-do .to-do-list-delete {
+    height: 100%;
+display: flex;
+align-items: center;
+}
+
+.to-do .to-do-list-checkbox {
+    width: 10%;
+    justify-content: center;
+}
+
+.to-do .to-do-checkbox {
+    cursor: pointer;
+}
+
+.to-do .to-do-list-text {
+    flex: 1;
+}
+
+.to-do .to-do-list-delete {
+    width: 10%;
+font-size: 1.3rem;
+font-weight: 300;
+text-align: center;
+background: #f9443f;
+color: white;
+justify-content: center;
+cursor: pointer;
+}
+
+.strike {
+    text-decoration: line-through;
+    font-style: italic;
+    font-weight: 300;
+}

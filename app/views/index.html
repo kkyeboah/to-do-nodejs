@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-do</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i&display=swap" rel="stylesheet">
+    <link href="/css/to-do.css" rel="stylesheet">
+</head>
+<body>
+<div id="app" class="container">
+    <div class="to-do">
+        <h1 class="to-do-heading">My To-do List</h1>
+        <form @submit.prevent="addTask" class="to-do-form">
+            <input type="text" v-model="task" class="to-do-input" placeholder="What do you want to do?" :autofocus="true">
+        </form>
+        <ul class="to-do-list">
+            <li v-for="(task, index) in tasks" class="to-do-list-item">
+                <div class="to-do-list-checkbox">
+                    <input type="checkbox" @change="updateTask(task._id, index, $event.target.checked)" :checked="task.done" class="to-do-checkbox">
+                </div>
+                <div class="to-do-list-text">
+                    <span class="to-do-text" :class="{'strike': task.done}">{{ task.name }}</span>
+                </div>
+                <div class="to-do-list-delete" @click="deleteTask(task._id, index)">
+                    <span role="button" class="to-do-delete">&times;</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="/js/to-do.js"></script>
+</body>
+</html>
