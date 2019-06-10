@@ -28,7 +28,8 @@ module.exports = class TasksController {
             {new: true},
             (err, task) => {
                 response.json(task);
-            });
+            }
+        );
     }
 
     static delete(request, response) {
