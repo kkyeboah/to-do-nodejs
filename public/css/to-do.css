@@ -55,8 +55,8 @@ html, body {
 
 .to-do .to-do-list-checkbox, .to-do .to-do-list-text, .to-do .to-do-list-delete {
     height: 100%;
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .to-do .to-do-list-checkbox {
@@ -74,13 +74,13 @@ align-items: center;
 
 .to-do .to-do-list-delete {
     width: 10%;
-font-size: 1.3rem;
-font-weight: 300;
-text-align: center;
-background: #f9443f;
-color: white;
-justify-content: center;
-cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+    background: #f9443f;
+    color: white;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .strike {
