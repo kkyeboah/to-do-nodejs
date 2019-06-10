@@ -4,21 +4,21 @@ const Task = require('../models/Task.js');
 
 module.exports = class TasksController {
     static index(request, response) {
-        Task.find({}, (err, tasks) => {
-            response.json(tasks);
-        });
+        Task.find({}, (err, tasks) => response.json(tasks));
     }
 
     static store(request, response) {
-        Task.create({name: request.body.name}, function (err, task) {
-            response.json(task);
-        });
+        Task.create(
+            {name: request.body.name},
+            (err, task) => response.json(task)
+        );
     }
 
     static show(request, response) {
-        Task.findById(request.params.id, (err, task) => {
-            response.json(task);
-        });
+        Task.findById(
+            request.params.id,
+            (err, task) => response.json(task)
+        );
     }
 
     static update(request, response) {
@@ -26,15 +26,14 @@ module.exports = class TasksController {
             request.params.id,
             {...request.body, ...{updatedAt: Date.now()}},
             {new: true},
-            (err, task) => {
-                response.json(task);
-            }
+            (err, task) => response.json(task)
         );
     }
 
     static delete(request, response) {
-        Task.findOneAndDelete({_id: request.params.id}, (err, task) => {
-            response.json(true);
-        });
+        Task.findOneAndDelete(
+            {_id: request.params.id},
+            (err, task) => response.json(true)
+        );
     }
 };
